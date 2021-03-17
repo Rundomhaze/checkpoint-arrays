@@ -5,5 +5,6 @@ module.exports = {
   filterByServiceRecord,
   sortByScore,
   getMeanAge,
+  getMeanAgeReduce,
   getNamesOnly,
 };

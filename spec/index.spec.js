@@ -4,6 +4,7 @@ const {
   filterByServiceRecord,
   sortByScore,
   getMeanAge,
+  getMeanAgeReduce,
   getNamesOnly,
 } = require('../index');
 
@@ -76,12 +77,11 @@ describe('Система отбора кандидатов в космонавт
   it('позволяет получить средний возраст кандидатов', () => {
     const mean = getMeanAge(candidates);
     expect(mean).toBe(44.6);
-    expect(getMeanAge.toString()).toContain('reduce');
   });
   it('позволяет получить средний возраст кандидатов с помощью reduce', () => {
-    const mean = getMeanAge(candidates);
+    const mean = getMeanAgeReduce(candidates);
     expect(mean).toBe(44.6);
-    expect(getMeanAge.toString()).toContain('reduce');
+    expect(getMeanAgeReduce.toString()).toContain('reduce');
   });
   it('позволяет получить список только имён кандидатов', () => {
     const names = candidates.map(getNamesOnly);
