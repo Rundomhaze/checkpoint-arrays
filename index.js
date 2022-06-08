@@ -1,30 +1,30 @@
-const filterByAge = () => {
-  // your code
+const filterByAge = (el) => el.age < 50;
+
+const filterByScore = (el) => el.score > 75;
+
+const filterByServiceRecord = (el) => el.serviceRecord > 5;
+
+const sortByScore = (candidates) => {
+  const sortedCandidates = candidates.map((el) => el)
+  return sortedCandidates.sort((a, b) => b.score - a.score)
 };
 
-const filterByScore = () => {
-  // your code
+const getMeanAge = (candidates) => {
+  const arrayOfAge = candidates.map((el) => el.age).map((el) => el)
+  let sumAge = 0;
+  for (let i = 0; i < arrayOfAge.length; i++) {
+    sumAge += arrayOfAge[i]
+  }
+  return sumAge / candidates.length
 };
 
-const filterByServiceRecord = () => {
-  // your code
+const getMeanAgeReduce = (candidates) => {
+  const sumAge = candidates.reduce((acc, el) => (acc + el.age), 0)
+  return sumAge / candidates.length
 };
 
-const sortByScore = () => {
-  // your code
-};
+const getNamesOnly = (el) => el.name;
 
-const getMeanAge = () => {
-  // your code
-};
-
-const getMeanAgeReduce = () => {
-  // your code
-};
-
-const getNamesOnly = () => {
-  // your code
-};
 
 module.exports = {
   filterByAge,
